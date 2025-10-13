@@ -100,3 +100,12 @@
      - Decide to put all the fasta file in the same folder /data/projet2/02_Phylogeny_part/fasta_files
 
           - for give more facilities to extract sequence with the help of a script
+
+
+
+## 13 octobre 
+- Jean-Louis ~ 2H 
+
+     - I fixed the last remaining issues with the Git repository, as there were still some errors to correct (mainly related to file structure and synchronization). After these adjustments, the repository is now fully functional and properly organized.
+     - I also designed a script to identify mitochondrial genomes among the sequences contained in the fasta_files directory.
+     The goal of this script is to automatically go through all FASTA files, detect those containing a single complete sequence (corresponding to a mitochondrial genome), and extract them into a dedicated folder for further analyses.
