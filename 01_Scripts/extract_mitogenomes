@@ -1,0 +1,24 @@
+import os
+
+INPUTDIR = "/data/projet2/02_Phylogeny_part/fasta_files"
+OUTPUTDIR = "/data/projet2/03_Mitogenome/mitogenomes"
+
+os.makedirs(OUTPUTDIR, exist_ok=True)
+
+report_lines = []
+
+for seq in os.listdir(INPUTDIR):
+    if seq.endswith(".fasta") or seq.endswith(".fna"):
+        fpath = os.path.join(INPUTDIR, seq)
+        with open(fpath, "r") as f:
+            lines = f.readlines()
+
+        # Trouver les headers
+        headers = [i for i, l in enumerate(lines) if l.startswith(">")]
+        if len(headers) == 1:
+            # Un seul header, on considère que c'est un génome mitochondrial complet
+            outpath = os.path.join(OUTPUTDIR, seq)
+            with open(outpath, "w") as out:
+                out.writelines(lines)
+            
+print("Extraction terminéee.")
