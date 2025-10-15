@@ -109,3 +109,7 @@
      - I fixed the last remaining issues with the Git repository, as there were still some errors to correct (mainly related to file structure and synchronization). After these adjustments, the repository is now fully functional and properly organized.
      - I also designed a script to identify mitochondrial genomes among the sequences contained in the fasta_files directory.
      The goal of this script is to automatically go through all FASTA files, detect those containing a single complete sequence (corresponding to a mitochondrial genome), and extract them into a dedicated folder for further analyses.
+
+## 14 octobre
+- rayan ~  3h
+     - I creatd a scipt that extract all mitocondrial files from the, i installed biopytonin inside the work environement and advenced the scipt for blasting all the mitocondrial genome and cutting them so they all start at the same genes for future alignment
