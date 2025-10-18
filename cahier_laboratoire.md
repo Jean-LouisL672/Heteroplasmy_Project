@@ -113,3 +113,20 @@
 ## 14 octobre
 - rayan ~  3h
      - I creatd a scipt that extract all mitocondrial files from the, i installed biopytonin inside the work environement and advenced the scipt for blasting all the mitocondrial genome and cutting them so they all start at the same genes for future alignment
+
+
+
+## 17 octobre 
+- Marieke ~ 20 min
+
+     - **Move the all fasta file** from ncbi-dataset in
+
+      /data/projet2/02_Phylogeny_part/fasta_files 
+
+     - This was done to make it easier to create the code that allows us to extract mitochondrial genomes later.
+
+## 18 octobre 
+- Jean-Louis ~ 10 min 
+
+     - creating a conda environment to install biopython with : 
+     conda create -n  biopython biopython

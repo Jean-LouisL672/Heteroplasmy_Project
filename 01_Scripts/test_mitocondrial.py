@@ -11,8 +11,8 @@ def Mitogenome_dir():
     return '/data/projet2/03_Mitogenome'
 
 def Mitogenome_seq():
-    """Collect sequences whose description contains 'mitochondrion' and
-    write them to one file per source folder inside Mitogenome_dir()."""
+    #Collect sequences whose description contains 'mitochondrion' and
+    #write them to one file per source folder inside Mitogenome_dir().
     os.makedirs(Mitogenome_dir(), exist_ok=True)
 
     for root, dirs, files in os.walk(fasta_files_dir()):
