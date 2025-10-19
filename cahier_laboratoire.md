@@ -102,7 +102,6 @@
           - for give more facilities to extract sequence with the help of a script
 
 
-
 ## 13 octobre 
 - Jean-Louis ~ 2H 
 
@@ -112,8 +111,13 @@
 
 ## 14 octobre
 - rayan ~  3h
-     - I creatd a scipt that extract all mitocondrial files from the, i installed biopytonin inside the work environement and advenced the scipt for blasting all the mitocondrial genome and cutting them so they all start at the same genes for future alignment
+     - I creatd a scipt that extract all mitocondrial files from the complete genome files, the script work by copying the recrd containing "mitochondrion" in it because Other genome without it have their mitochondrion genome dispatched in diffrent scafold.
+     and created the draft of a scipt for blasting all the mitocondrial genome and cutting them so they all start at the same genes for future alignment. I put the blast program inside the Blast+ files so we can process it in local with out own database of micodrial genes withpout depending of an extern servor than can go down
 
+
+## 15 octobre
+ - rayan ~ 1h30
+ I tried to install biopython into the conda environment unsuccesfully, it installed inside my path instead of the python path in conda even with "conda install"
 
 
 ## 17 octobre 
@@ -125,8 +129,53 @@
 
      - This was done to make it easier to create the code that allows us to extract mitochondrial genomes later.
 
+
 ## 18 octobre 
 - Jean-Louis ~ 10 min 
 
      - creating a conda environment to install biopython with : 
      conda create -n  biopython biopython
+
+
+- Marieke ~ 2h30
+
+     - modified the file test_mitochondrial.py created  by Rayan for being adapted on or directories 
+     - i rename the file : **02_get_mitochondrial_genome.py**
+     - i first test the file on one .fna files for seeing if the script work 
+
+          - GENOMEDIR="/data/projet2/02_Phylogeny_part/fasta_files/subset"
+
+      - cd 01_Scripts 
+      - conda activate /data/projet2/conda/biopython
+      - python3 02_get_mitocondrial_genome.py &
+      - conda deactivate
+
+     - The job was a succed so i run the script on the all file after changing the GENOMEDIR path : /data/projet2/02_Phylogeny_part/fasta_files
+
+
+      - cd 01_Scripts 
+      - conda activate /data/projet2/conda/biopython
+      - nohup python3 /data/projet2/01_Scripts/02_get_mitocondrial_genome.py > /data/projet2/01_Scripts/mito.log 2>&1 & 
+      - conda deactivate
+
+     - nohup permit to run the script in background for see the avancment of the job : ps aux | grep 02_get_mitocondrial_genome.py
+     - to see the complete log : cat /data/projet2/01_Scripts/mito.log
+     - to see the files created : ls -lh /data/projet2/02_Phylogeny_part/mitochondrion/
+
+
+## 19 octobre :
+- Marieke ~ 1h
+
+     - The jobs was done great and we find in mito.log our print of the script.
+     - With : **cat /data/projet2/01_Scripts/mito.log | grep "^No" | wc -l**, we can see their is 5 genomes where the term "mitochondrion" is not found and 16 genomes where we find the term (**cat /data/projet2/01_Scripts/mito.log | grep "^Written" | wc -l**)
+
+     -> Goal : see if their is another word for the mitochondrial genome in the 5 files where we dont find "mitochondrion"
+
+      - conda activate /data/projet2/conda/environment_projet
+      - conda install bioconda::seqkit
+      - seqkit version : seqkit v2.10.1
+
+     - use of seqkit for see if their is an other term for mitochondrial genome in this 5 files and their is no mitochondrial genome header in the 5 files.
+
+- rayan ~ 2h
+      I advenced the scipt named "wip (Work in progress) blast" that blast all the mitocondrial genome with a target genes commun to all, this gens will be then rearanged so the target genes is the first one of the genomes, for the alignment. i created the blast output folder that will contain the "blasdte.xml" out files
