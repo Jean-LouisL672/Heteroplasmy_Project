@@ -179,3 +179,21 @@
 
 - rayan ~ 2h
       I advenced the scipt named "wip (Work in progress) blast" that blast all the mitocondrial genome with a target genes commun to all, this gens will be then rearanged so the target genes is the first one of the genomes, for the alignment. i created the blast output folder that will contain the "blasdte.xml" out files
+
+
+
+## 28 octobre :
+- Marieke ~15min
+
+     - I created the files missing_mito_mention.txt in /data/projet2/02_Phylogeny_part/mitochondrion
+     - this file can be helpful for the process of finding the part of the genome can be correspond to mitochonrdial geneome by a blast against the other 16 mitochondrion genome
+
+           cat *.fasta > 16_mito_genome_ref.fasta
+     - Concact all the mitochondrion genome of our 16 genomes where a mitochondrion was found
+     - After looking the content by : 
+     
+           grep "^>" 16_mito_genome_ref.fasta | wc -l
+     
+     - 17 header are found, so in one file, their is two header containing mitochondrion mention
+
+     - The created file 16_mito_genome_ref.fasta can help us for the blast to find in the 5 files mitochondrion sequence
