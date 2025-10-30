@@ -1,0 +1,9 @@
+==> 2025-09-16 09:16:26 <==
+# cmd: /opt/conda/bin/conda create -n ncbi_datasets
+# conda version: 25.7.0
+==> 2025-09-16 09:16:59 <==
+# cmd: /opt/conda/bin/conda install -c conda-forge ncbi-datasets-cli
+# conda version: 25.7.0
++conda-forge/linux-64::ncbi-datasets-cli-18.7.0-ha770c72_0
++conda-forge/noarch::ca-certificates-2025.8.3-hbd8a1cb_0
+# update specs: ['ncbi-datasets-cli']

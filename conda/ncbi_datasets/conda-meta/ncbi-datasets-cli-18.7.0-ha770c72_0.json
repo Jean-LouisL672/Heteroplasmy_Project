@@ -1,0 +1,49 @@
+{
+  "name": "ncbi-datasets-cli",
+  "version": "18.7.0",
+  "build": "ha770c72_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/conda-forge/noarch",
+  "subdir": "linux-64",
+  "fn": "ncbi-datasets-cli-18.7.0-ha770c72_0.conda",
+  "md5": "fd889cea9133ba1b1e09b7df8ae948ba",
+  "url": "https://conda.anaconda.org/conda-forge/linux-64/ncbi-datasets-cli-18.7.0-ha770c72_0.conda",
+  "sha256": "d87078fc483af314402071bdfd627103750d497717143cbe69d331e74857c3a0",
+  "depends": [
+    "ca-certificates"
+  ],
+  "constrains": [],
+  "license": "Public Domain",
+  "timestamp": 1757006389000,
+  "size": 16835597,
+  "requested_spec": "ncbi-datasets-cli",
+  "package_tarball_full_path": "/home/badione/.conda/pkgs/ncbi-datasets-cli-18.7.0-ha770c72_0.conda",
+  "extracted_package_dir": "/home/badione/.conda/pkgs/ncbi-datasets-cli-18.7.0-ha770c72_0",
+  "files": [
+    "bin/dataformat",
+    "bin/datasets"
+  ],
+  "paths_data": {
+    "paths_version": 1,
+    "paths": [
+      {
+        "_path": "bin/dataformat",
+        "path_type": "hardlink",
+        "sha256": "ffdc54e8dcf5542c5369b29ecfe71e8153ab74034eb3f1522fcc42eb4629447b",
+        "size_in_bytes": 19553081,
+        "sha256_in_prefix": "ffdc54e8dcf5542c5369b29ecfe71e8153ab74034eb3f1522fcc42eb4629447b"
+      },
+      {
+        "_path": "bin/datasets",
+        "path_type": "hardlink",
+        "sha256": "200c6ef8df827768904dba7b4f4694c8b598599612a385cd2dce67ae2839ed0f",
+        "size_in_bytes": 19142607,
+        "sha256_in_prefix": "200c6ef8df827768904dba7b4f4694c8b598599612a385cd2dce67ae2839ed0f"
+      }
+    ]
+  },
+  "link": {
+    "source": "/home/badione/.conda/pkgs/ncbi-datasets-cli-18.7.0-ha770c72_0",
+    "type": 1
+  }
+}

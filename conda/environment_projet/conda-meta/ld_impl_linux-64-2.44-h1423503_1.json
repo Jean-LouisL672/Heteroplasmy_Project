@@ -1,0 +1,52 @@
+{
+  "name": "ld_impl_linux-64",
+  "version": "2.44",
+  "build": "h1423503_1",
+  "build_number": 1,
+  "channel": "https://conda.anaconda.org/conda-forge/linux-64",
+  "subdir": "linux-64",
+  "fn": "ld_impl_linux-64-2.44-h1423503_1.conda",
+  "md5": "0be7c6e070c19105f966d3758448d018",
+  "url": "https://conda.anaconda.org/conda-forge/linux-64/ld_impl_linux-64-2.44-h1423503_1.conda",
+  "sha256": "1a620f27d79217c1295049ba214c2f80372062fd251b569e9873d4a953d27554",
+  "depends": [
+    "__glibc >=2.17,<3.0.a0"
+  ],
+  "constrains": [
+    "binutils_impl_linux-64 2.44"
+  ],
+  "license": "GPL-3.0-only",
+  "timestamp": 1752032747000,
+  "size": 676044,
+  "requested_spec": "None",
+  "package_tarball_full_path": "/home/badione/.conda/pkgs/ld_impl_linux-64-2.44-h1423503_1.conda",
+  "extracted_package_dir": "/home/badione/.conda/pkgs/ld_impl_linux-64-2.44-h1423503_1",
+  "files": [
+    "bin/x86_64-conda-linux-gnu-ld",
+    "x86_64-conda-linux-gnu/bin/ld"
+  ],
+  "paths_data": {
+    "paths_version": 1,
+    "paths": [
+      {
+        "_path": "bin/x86_64-conda-linux-gnu-ld",
+        "prefix_placeholder": "/home/conda/feedstock_root/build_artifacts/binutils_split_1752032521065/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeh",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "sha256": "c39ddabf7897b0587a73d394f21e74a7638e5c4259763e8458b850bc9ad067d3",
+        "size_in_bytes": 3449352,
+        "sha256_in_prefix": "60c204200f67cae696cdf6c74eac66e03dcab2ce7ba1757fbb3fca41a5c33cbf"
+      },
+      {
+        "_path": "x86_64-conda-linux-gnu/bin/ld",
+        "path_type": "softlink",
+        "sha256": "c39ddabf7897b0587a73d394f21e74a7638e5c4259763e8458b850bc9ad067d3",
+        "size_in_bytes": 3449352
+      }
+    ]
+  },
+  "link": {
+    "source": "/home/badione/.conda/pkgs/ld_impl_linux-64-2.44-h1423503_1",
+    "type": 1
+  }
+}

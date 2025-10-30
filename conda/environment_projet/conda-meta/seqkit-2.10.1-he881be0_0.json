@@ -1,0 +1,39 @@
+{
+  "name": "seqkit",
+  "version": "2.10.1",
+  "build": "he881be0_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/bioconda/linux-64",
+  "subdir": "linux-64",
+  "fn": "seqkit-2.10.1-he881be0_0.conda",
+  "md5": "7aa968b0961e96eb81ad6bfb78711996",
+  "url": "https://conda.anaconda.org/bioconda/linux-64/seqkit-2.10.1-he881be0_0.conda",
+  "sha256": "1092b10c33272f04a7b9ab074c417d116c80f57ca19ce918969825b8b5205812",
+  "depends": [],
+  "constrains": [],
+  "license": "MIT",
+  "timestamp": 1755592064000,
+  "size": 12323830,
+  "requested_spec": "bioconda::seqkit",
+  "package_tarball_full_path": "/home/gorissen/.conda/pkgs/seqkit-2.10.1-he881be0_0.conda",
+  "extracted_package_dir": "/home/gorissen/.conda/pkgs/seqkit-2.10.1-he881be0_0",
+  "files": [
+    "bin/seqkit"
+  ],
+  "paths_data": {
+    "paths_version": 1,
+    "paths": [
+      {
+        "_path": "bin/seqkit",
+        "path_type": "hardlink",
+        "sha256": "a4dcd1ad6ed2d1045b68f321419ef1e181e09bbcc67c0978bfbaddef0b9b6b9c",
+        "size_in_bytes": 27779297,
+        "sha256_in_prefix": "a4dcd1ad6ed2d1045b68f321419ef1e181e09bbcc67c0978bfbaddef0b9b6b9c"
+      }
+    ]
+  },
+  "link": {
+    "source": "/home/gorissen/.conda/pkgs/seqkit-2.10.1-he881be0_0",
+    "type": 1
+  }
+}

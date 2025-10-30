@@ -1,0 +1,11 @@
+prefix=/data/projet2/conda/environment_projet
+exec_prefix=/data/projet2/conda/environment_projet
+libdir=/data/projet2/conda/environment_projet/lib
+includedir=/data/projet2/conda/environment_projet/include
+
+Name: uuid
+Description: Universally unique id library
+Version: 2.41.1
+Cflags: -I${includedir}/uuid
+Libs.private:  -lpthread
+Libs: -L${libdir} -luuid

@@ -1,0 +1,51 @@
+{
+  "name": "liblapack",
+  "version": "3.9.0",
+  "build": "37_h47877c9_openblas",
+  "build_number": 37,
+  "channel": "https://conda.anaconda.org/conda-forge/noarch",
+  "subdir": "linux-64",
+  "fn": "liblapack-3.9.0-37_h47877c9_openblas.conda",
+  "md5": "8305e6a5ed432ad3e5a609e8024dbc17",
+  "url": "https://conda.anaconda.org/conda-forge/linux-64/liblapack-3.9.0-37_h47877c9_openblas.conda",
+  "sha256": "e37125ad315464a927578bf6ba3455a30a7f319d5e60e54ccc860ddd218d516d",
+  "depends": [
+    "libblas 3.9.0 37_h4a7cf45_openblas"
+  ],
+  "constrains": [
+    "blas 2.137 openblas",
+    "liblapacke 3.9.0 37*_openblas",
+    "libcblas 3.9.0 37*_openblas"
+  ],
+  "license": "BSD-3-Clause",
+  "timestamp": 1760212744000,
+  "size": 17470,
+  "requested_spec": "None",
+  "package_tarball_full_path": "/home/badione/.conda/pkgs/liblapack-3.9.0-37_h47877c9_openblas.conda",
+  "extracted_package_dir": "/home/badione/.conda/pkgs/liblapack-3.9.0-37_h47877c9_openblas",
+  "files": [
+    "lib/liblapack.so",
+    "lib/liblapack.so.3"
+  ],
+  "paths_data": {
+    "paths_version": 1,
+    "paths": [
+      {
+        "_path": "lib/liblapack.so",
+        "path_type": "softlink",
+        "sha256": "c0ed493faf66df7f16a15ad0ce60ef182ddf936b3df3cbfeedce416d33e1e883",
+        "size_in_bytes": 41424320
+      },
+      {
+        "_path": "lib/liblapack.so.3",
+        "path_type": "softlink",
+        "sha256": "c0ed493faf66df7f16a15ad0ce60ef182ddf936b3df3cbfeedce416d33e1e883",
+        "size_in_bytes": 41424320
+      }
+    ]
+  },
+  "link": {
+    "source": "/home/badione/.conda/pkgs/liblapack-3.9.0-37_h47877c9_openblas",
+    "type": 1
+  }
+}

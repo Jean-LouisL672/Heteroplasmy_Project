@@ -1,0 +1,7 @@
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+conda-build:
+  activate: true
+channel_priority: strict
