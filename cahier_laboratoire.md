@@ -221,3 +221,6 @@
      Build a BLAST database for each genome.
      Run blastn with appropriate parameters (e-value = 1e-6, max 50 hits).
 
+     - The script has not yet been tested and is probably not complete.
+     Some variables (such as the path to the reference gene) will need to be adjusted before execution.
+
