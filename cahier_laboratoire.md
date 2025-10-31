@@ -197,3 +197,27 @@
      - 17 header are found, so in one file, their is two header containing mitochondrion mention
 
      - The created file 16_mito_genome_ref.fasta can help us for the blast to find in the 5 files mitochondrion sequence
+
+- Jean-Louis ~ 2H
+
+     - Inspection and detection of mitochondrial sequences in genomes
+     Objective: To identify mitochondrial sequences present in the genomic files in the 02_Phylogeny_part/fasta_files folder, either through explicit annotation in the headers or by sequence similarity with a reference mitochondrial gene.
+
+     - Inspection of headers:
+     For each .fna file, I started by displaying the first 10 lines to view the headers and assess whether mitochondrial annotation was already present.
+          for f in 02_Phylogeny_part/fasta_files/*.fna; do
+           echo "== $f =="
+           head -n 10 "$f"
+           echo "---"
+
+     - Searching for mitochondrial patterns:
+     I planned to use a grep command to search the headers for keywords such as mitochondrion, mitochondrial, mitogenome, mito, plasmid, etc., in order to identify potentially mitochondrial sequences.
+
+          grep -iHn -E "mitochondrion|mito|mitochondrie|mitochondrial|mitogenome|plasmid|mitochondr"
+     
+     - Identification by similarity (BLAST):
+     For files that do not contain explicit annotations, I have prepared a BLAST-based approach:
+     Use a reference mitochondrial gene (reference_mito_gene.fasta) to search for homologous regions in each genome.
+     Build a BLAST database for each genome.
+     Run blastn with appropriate parameters (e-value = 1e-6, max 50 hits).
+
