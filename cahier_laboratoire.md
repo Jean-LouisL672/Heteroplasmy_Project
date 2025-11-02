@@ -198,6 +198,7 @@
 
      - The created file 16_mito_genome_ref.fasta can help us for the blast to find in the 5 files mitochondrion sequence
 
+## 30 octobre : 
 - Jean-Louis ~ 2H
 
      - Inspection and detection of mitochondrial sequences in genomes
@@ -223,4 +224,31 @@
 
      - The script has not yet been tested and is probably not complete.
      Some variables (such as the path to the reference gene) will need to be adjusted before execution.
+
+     - Finally, we're going to use the script made by Rayan, so mine is deleted.
+
+
+## 31 octobre 
+
+- Jean-Louis ~ 1H 
+     
+     - Creation of a script: This script is used to automatically download the reference genomes of Astacidae (Astacidea clade) from the NCBI database using the datasets command.
+     
+     - Defining the working directories: The script creates the necessary directories to store the downloaded ZIP file and the future FASTA files.
+     
+     - Preparing the NCBI command
+     It constructs a Bash command that:
+     activates the conda environment containing the datasets command,
+     downloads the genomes of the "Astacidea" taxon (it is better to use TaxID 6712),
+     limits the search to complete or chromosome-level assemblies,
+     and saves everything in an astacidea_genomes.zip file.
+
+     - Executing the download
+     The command is executed via Python (os.system).
+     If the download is successful, the message "Downloading is done" is displayed; otherwise, an error is reported.
+
+     - Preparation for extraction
+     The zipfile module is imported to, eventually, extract the FASTA sequences from the ZIP file to a dedicated folder (this function is not yet activated in this version).
+     
+     - This script sets up an automated and reproducible procedure to obtain the complete RefSeq genomes of Astacidea species, using the NCBI Datasets command-line tool in a conda environment configured for this project.
 
