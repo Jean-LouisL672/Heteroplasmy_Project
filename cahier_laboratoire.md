@@ -252,3 +252,7 @@
      
      - This script sets up an automated and reproducible procedure to obtain the complete RefSeq genomes of Astacidea species, using the NCBI Datasets command-line tool in a conda environment configured for this project.
 
+## 3 novembre 
+- Jean-Louis ~ 1H 
+
+     - I tried to modify the Astacidea genome download script so that all the FASTA files are merged into a single file
