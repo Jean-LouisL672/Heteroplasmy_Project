@@ -256,3 +256,29 @@
 - Jean-Louis ~ 1H 
 
      - I tried to modify the Astacidea genome download script so that all the FASTA files are merged into a single file
+
+
+## 4 novembre 
+- Marieke ~ 2h
+
+     - Reflections on what tools can i use and reading the documentation of them
+
+     - Creating a new conda environnement for the mapping step of the Astracidea Genome :
+
+      conda create -n env_mapping_astra
+     - to activate the environment run :
+
+      conda activate /data/projet2/conda/envs/env_mapping_astra
+
+     - Installing packages necessary for this step 
+     
+          - sra-tools version 3.2.1 : for recuparate the raw reads of genome :
+          - minimap2 version 2.30 : for the mapping step because we have long reads to map to the reference
+
+      conda install bioconda::sra-tools
+      conda install bioconda::minimap2
+
+
+- Jean-Louis ~ 1H 
+
+     - I keep thinking about how to make my code work.
