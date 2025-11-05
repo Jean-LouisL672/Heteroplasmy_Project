@@ -19,8 +19,8 @@ download_cmd = f'''
 source /opt/conda/etc/profile.d/conda.sh
 conda activate {ENV_NCBI}
 datasets download genome taxon "Astacidea" \\
-  --assembly-source RefSeq \\
-  --reference \\
+  --assembly-level chromosome \\
+  --assembly-source GenBank \\
   --filename "{GENOMEDIR}/astacidea_genomes.zip"
 conda deactivate
 '''
