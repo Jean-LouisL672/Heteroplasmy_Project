@@ -289,3 +289,7 @@
      - like the first part of the project, i create a fasta file folder where i would like to put the fasta file dowload from the ncbi by Jean Louis in /data/projet2/03_Astacidea_Genome.
      - I would also extract the mitochondrion genome from the reference file by using the script /01_Scripts/04_get_mito_genome_Astracidea.py
      - I create the file /01_Scripts/05_Dowload_Reads.sh for dowloading reads of genome from one of the Astacidea genome we have. I start to complete the script.
+
+- Jean-Louis ~ 30 min 
+
+     - Retrieval of the 4 sequences that are stored in 03_Astacidea_genome/Astacidea_genome/ncbi_dataset
