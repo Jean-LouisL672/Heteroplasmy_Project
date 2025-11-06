@@ -293,3 +293,5 @@
 - Jean-Louis ~ 30 min 
 
      - Retrieval of the 4 sequences that are stored in 03_Astacidea_genome/Astacidea_genome/ncbi_dataset
+
+## 6 novembre 
