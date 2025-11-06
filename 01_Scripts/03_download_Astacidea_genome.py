@@ -40,7 +40,7 @@ print("Extraction is done")
 astacidea_genomes = glob.glob(f"{GENOMEDIR}/astacidea_genomes/**/*.fna", recursive=True)
 combined_fasta_path = os.path.join(OUTPUTDIR, "astacidea_genomes_all.fna")
 with open(combined_fasta_path, 'w') as outfile:
-    for fasta_file in astacidea_genomes:
-        with open(fasta_file, 'r') as infile:
+    for ncbi_datasets in astacidea_genomes:
+        with open(ncbi_datasets, 'r') as infile:
             outfile.write(infile.read())
 print(f"Combined {len(astacidea_genomes)} fasta files into {combined_fasta_path}")

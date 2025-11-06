@@ -4,8 +4,8 @@ import Bio
 from Bio import SeqIO
 
 # Directories
-GENOMEDIR="/data/projet2/03_Astracidea_Genome/fasta_files"
-MITO_DIR_OUTPUT="/data/projet2/03_Astracidea_Genome/Reference_mitogenome"
+GENOMEDIR="/data/projet2/03_Astacidea_Genome/fasta_files"
+MITO_DIR_OUTPUT="/data/projet2/03_Astacidea_Genome/mitogenome"
 
 # Create output directory if it doesn't exist
 os.makedirs(MITO_DIR_OUTPUT, exist_ok=True)
@@ -19,7 +19,7 @@ def Mitogenome_seq():
 
             file_path = os.path.join(GENOMEDIR, file)
             base_name = os.path.splitext(file)[0]
-            output_file = os.path.join(MITO_DIR_OUTPUT, f"{base_name}_mitogenome_ref.fasta")
+            output_file = os.path.join(MITO_DIR_OUTPUT, f"{base_name}_mitogenome.fasta")
 
             mito_seq=[]
             for record in SeqIO.parse(file_path, "fasta"):
