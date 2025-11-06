@@ -1,0 +1,72 @@
+
+import os
+import subprocess
+from Bio import SeqIO
+from Bio.Seq import Seq
+from Bio.SeqRecord import SeqRecord
+from Bio.Blast import NCBIXML
+
+GENOMEDIR = "/data/projet2/02_Phylogeny_part/mitochondrion"
+BLAST_DIR_OUTPUT = "/data/projet2/02_Phylogeny_part/mitochondrion/blast_output"
+GENES_DIR_OUTPUT = "/data/projet2/02_Phylogeny_part/mitochondrion/output_test"
+SEQ_FASTA = "/data/projet2/02_Phylogeny_part/fasta_files/seq.fasta"
+
+blast = "/data/projet2/Blast+/linux"
+
+seq = (
+    "ATAGCTAACCTATTCTCTATTTTTGAACCCTCATCAAGAATTTTTAATCTTTCACTAGGCTGACTTTCCA"
+    "CACTTCTAGGATTGCTATTTATTCCTTATTTATATTGAGCTTCTCCATCACGTTGATCATTATGCTGAAG"
+    "AGATATAATTTTTACTTTGCATAAAGAATTCAAAGCCTTACTAACCGCTCATTGCGTAGGCTCAACTATT"
+    "TTCTTTGTCTCCTTGTTCTCTCTCATTTTATATAACAATTTTTTAGGACTTTTACCATATGTATTCACAA"
+    "GATCTAGGCATATAGCAATAACCTTAGCTCTTTCTTTACCCCTATGAGTGACCCTAATAGTTAGAGGGTG"
+    "AGTCAACCATACCCAGCATATGTTTGCTCATTTAGTGCCCCAGGGTACTCCTTCTGTCCTTATACCTTTT"
+    "ATAGTATTAATTGAGACTATTAGAAATATTATTCGACCTGGAACCTTAGCTGTTCGTTTGGCTGCCAACA"
+    "TAATTGCTGGCCATCTACTATTAACTCTTTTAGGTAATACAGGACCATCTATAACATCCTCATTAATCTT"
+    "ATCAATTCTAATTTTTTCTCAAATTCTTTTACTAACCTTGGAATCTGCTGTCGCAATTATTCAATCTTAT"
+    "GTGTTTGCTGTTTTAAGAACTCTCTACACTAGAGAAATTAACTAA"
+)
+
+SeqRecord = SeqRecord(Seq(seq), id="ATP6", description="")
+SeqIO.write(SeqRecord, SEQ_FASTA, "fasta")
+
+
+def blast_prot(file):
+    cible = os.path.join("/data/projet2/02_Phylogeny_part/mitochondrion", file)
+    os.makedirs(BLAST_DIR_OUTPUT, exist_ok=True)
+    out_xml = os.path.join(BLAST_DIR_OUTPUT, "result_blast.xml")
+    cmd_line = [blast, "-query", SEQ_FASTA, "-db", cible,
+            "-evalue", "0.001", "-out", BLAST_DIR_OUTPUT + "result_blast.xml", "-outfmt", "5"]
+    subprocess.run(cmd_line)
+
+    return out_xml
+
+def get_hit_query_end(xml_path):
+    with open(xml_path, 'r') as result_file:
+        records = NCBIXML.parse(result_file)
+        for blast_record in records:
+            for alignment in blast_record.alignments:
+                for hsp in alignment.hsps:
+                    # retourne la position query_end du premier HSP trouvé
+                    return getattr(hsp, "query_end", None)
+    return None
+
+def create_sequences():
+    os.makedirs(GENES_DIR_OUTPUT, exist_ok=True)
+    for file in os.listdir(GENOMEDIR):
+        if file.lower().endswith((".fasta", ".fna", ".fa")):
+            fasta_path = os.path.join(GENOMEDIR, file)
+            xml = blast_prot(file)
+            hit_end = get_hit_query_end(xml)
+            os.remove(xml)    #on suprimme le fichier xml pour en avoir qu'un seul a chaque reiteration du blast
+            # couper et réécrire les séquences a partir du genes 
+            out_records = []
+            for record in SeqIO.parse(fasta_path, "fasta"):
+                seq_str = str(record.seq)
+                cut_seq = seq_str[int(hit_end):] + seq_str[:int(hit_end)]
+                new_rec = SeqRecord(Seq(cut_seq), id=record.id, description="")
+                out_records.append(new_rec)
+            SeqIO.write(out_records, f"/data/projet2/02_Phylogeny_part/mitochondrion/output_test/cut_{file}", "fasta")
+
+
+if __name__ == "__main__":
+    create_sequences()

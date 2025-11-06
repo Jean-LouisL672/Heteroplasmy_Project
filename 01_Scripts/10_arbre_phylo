@@ -1,0 +1,8 @@
+import iqtree
+
+
+# arbre Maximum de Vraisemblance , on a pu montrer que ML, associé à une bonne recherche heuristique, est la méthode 
+#qui a le plus de chances de retrouver la vraie phylogénie. C’est son avantage majeur au vu de notre jeux de donner avec
+# un nombre limité de séquences.
+
+
