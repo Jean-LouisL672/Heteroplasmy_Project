@@ -295,3 +295,63 @@
      - Retrieval of the 4 sequences that are stored in 03_Astacidea_genome/Astacidea_genome/ncbi_dataset
 
 ## 6 novembre 
+- Marieke ~ 4h
+
+     - I move the fasta file from the ncbi of Astacidea genome into the folder in this directory : /data/projet2/03_Astacidea_Genome/fasta_files
+     
+     - I run the script : 04_get_mito_genome_Astracidea.py for keep only mitochondrial genome annotate in the header
+
+
+      - cd 01_Scripts 
+      - conda activate /data/projet2/conda/biopython
+      - nohup python3 /data/projet2/01_Scripts/04_get_mito_genome_Astacidea.py > /data/projet2/01_Scripts/mito_2.log 2>&1 & 
+      - conda deactivate   
+
+     - No mitogenome find in the four files, so i search the mention mitochondrion but is not present because it's GenBank fasta.
+     - So i decided to download the 2 files genomes from Refseq for having the mitochondrial genome reference for the mapping 
+
+           - conda activate /data/projet2/conda/ncbi_datasets
+           - datasets download genome taxon "Astacidea" --assembly-level chromosome --assembly-source RefSeq --filename "/data/projet2/03_Astacidea_Genome/fasta_files/astacidea_ref_genome.zip" 
+           - conda deactivate
+
+     - I extract the genome by unzip the file
+      
+           - cd 03_Astacidea_Genome/fasta_files/
+           - conda activate /data/projet2/conda/environment_projet
+           - python3 -m zipfile -e astacidea_ref_genome.zip genome_refseq
+           - conda deactivate
+
+     - I delete the file and folder which are unecessary and created the 05_get_mito_ref.py for running process on the new genomes files and rename 05_Download_Reads.sh in 06_Download_Reads.sh
+
+      - cd 01_Scripts 
+      - conda activate /data/projet2/conda/biopython
+      - nohup python3 /data/projet2/01_Scripts/05_get_mito_ref.py > /data/projet2/01_Scripts/mito_ref.log 2>&1 & 
+      - conda deactivate
+
+
+     - I rename the two files with the name of the species in the header in /data/projet2/03_Astacidea_Genome/Reference_mitogenome
+
+     - I run the script 06_Dowload_Reads.sh for extract reads for the species _Procambarus clarkii_ from SRA by using SRA-tool and the environnement for it :
+
+      
+      - nohup bash /data/projet2/01_Scripts/06_Dowload_Reads.sh > reads.log 2>&1 &
+
+
+
+     - I install other tools in the environment for step before the mapping
+
+      - conda install bioconda::nanoplot
+      - conda install bioconda::filtlong
+      - conda install bioconda::seqkit
+
+     - nanoplot version 1.46.1 for quality analyses of PacBio reads
+     - filtlong  version 0.3.1 for filtering the reads maybe
+     - seqkit version  2.10.1 for doing statistic on the reads
+     
+     - I created the 09_Reads_PcBio_analyse.sh for the analyse of the reads with Nanoplot for creating QC report file and see the quality of the reads
+
+- Jean-Louis ~ 1H
+     
+     - The Git workflow has been improved to ensure clearer version tracking and better readability of the project history
+
+     - I created the 11_Assemble_Reads.sh script to run a genome assembler (hifiasm) on the extracted reads and to generate statistics for the resulting assembly files
