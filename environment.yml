@@ -1,0 +1,22 @@
+name: base
+channels:
+  - conda-forge
+  - defaults
+  - biopython
+  - environment_projet
+  - ncbi_datasets
+dependencies:
+  - python=3.13
+  - conda=25.7.0
+  - setuptools
+  - pip
+  - wheel
+  - conda-anaconda-telemetry[version='>=0.3.0']
+  - conda-anaconda-tos[version='>=0.2.2']
+  - conda-content-trust
+  - conda-libmamba-solver
+  - menuinst
+  - anaconda-anon-usage
+  - anaconda-auth
+  - mamba
+prefix: /opt/conda
