@@ -355,3 +355,17 @@
      - The Git workflow has been improved to ensure clearer version tracking and better readability of the project history
 
      - I created the 11_Assemble_Reads.sh script to run a genome assembler (hifiasm) on the extracted reads and to generate statistics for the resulting assembly files
+
+
+## 7 novembre 
+- Jean-Louis ~ 2H
+
+     - Create an environment.yml file to export the conda environment using the following command: 
+
+          conda env export --from-history > environment.yml
+
+     Then add it to the git tracking
+
+     - Modification of the .gitignore file by adding large files such as conda environments, .log files, .zip files, and sequences.
+
+     - I modified script 11, but it still needs to be tested once the sequences have been downloaded.
