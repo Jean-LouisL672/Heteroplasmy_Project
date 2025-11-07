@@ -1,2 +1,46 @@
+
+# PROJET HÉTÉROPLASMIE - FICHIERS VOLUMINEUX À EXCLURE DE GIT
+
+
+# Dossiers de données volumineux
 02_Phylogeny_part/
-conda/
+03_Astacidea_Genome/
+
+# Fichiers de génomes et séquences (>50MB)
+*.zip
+*.fasta
+*.fna
+*.fastq
+*.sra
+*.fa
+*.gz
+
+# Archives spécifiques
+decapoda_genomes.zip
+astacidea_genomes.zip
+
+# Fichiers de logs et temporaires
+*.log
+mito.log
+mito_2.log
+*.tmp
+*.temp
+
+# Environnements Conda (volumineux)
+conda/envs/
+conda/biopython/
+conda/environment_projet/
+conda/ncbi_datasets/
+envs/
+biopython/
+environment_projet/
+nobi_datasets/
+conda_envs_dir_test/
+
+
+# Données de sortie volumineuses
+*_output/
+results/
+analysis_results/
+blast_output/
+mapping_results/
