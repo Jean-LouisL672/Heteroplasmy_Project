@@ -1,3 +1,6 @@
+#!/usr/bin/env python4
+import os
+from Bio import SeqIO
 from Bio import AlignIO
 from Bio import Align
 import subprocess
@@ -17,7 +20,7 @@ def alignement():
                 for record in SeqIO.parse(fasta_path, "fasta"):
                     SeqIO.write(record, result_file, "fasta")
     result_file.close()
-    # Aligner les séquences avec Clustal Omega
     subprocess.run(["clustalo","-i", FICHIER_ALIGNER,"-o", OUTPUT_CLUSTAL,"--force"  ])
+    # Aligner les séquences avec Clustal Omega
 if __name__ == "__main__":
     alignement()
