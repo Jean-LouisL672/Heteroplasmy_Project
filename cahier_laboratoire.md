@@ -369,3 +369,103 @@
      - Modification of the .gitignore file by adding large files such as conda environments, .log files, .zip files, and sequences.
 
      - I modified script 11, but it still needs to be tested once the sequences have been downloaded.
+
+
+- Marieke ~ 3h30
+
+     - I created the conda environment for iq-tree :
+
+      - conda create -n env_iqtree
+      - conda activate /data/projet2/conda/envs/env_iqtree
+      - conda install bioconda::iqtree
+      - conda deactivate 
+
+     - iqtree version : 3.0.1
+
+     - i install fastqc also for having a review on the quality of the reads
+     
+      - conda activate /data/projet2/conda/envs/env_mapping_astra 
+      - conda install bioconda::fastqc
+      - conda deactivate
+
+     - I modified the 09_Reads_PcBio_analyse.sh for doing some analysis and statistics on it
+     - I try to run it for seqkit analyse:
+
+      - nohup bash /data/projet2/01_Scripts/09_Raw_Reads_PcBio_stat.sh > raw_read_stat.log 2>&1 &
+
+     - I created /data/projet2/01_Scripts/12_Raw_Read_PcBio_nanoplot.sh script for run Nanoplot on the reads for having a visual view of the quality og or read and some other statistical data.
+
+      - nohup bash /data/projet2/01_Scripts/12_Raw_Read_PcBio_nanoplot.sh > raw_read_nano.log 2>&1 & 
+
+     - I created the script 14_Mapping_Reads.sh for run the mapping of the reads.
+
+     - I install 2 other tools in the conda environment env_mapping_astra
+      - conda activate /data/projet2/conda/envs/env_mapping_astra
+      - conda install bioconda::samtools
+      - conda install bioconda::bcftools
+
+     - bcftools version  1.22 
+     - samtools version  1.22.1 
+
+     - I install filtlong tools also for filtering the long reads 
+      - conda activate /data/projet2/conda/envs/env_mapping_astra
+      - conda install bioconda::filtlong
+      - conda deactivate 
+
+     filtlong version : 0.3.1
+
+     - I created next the 13_Filtering_lenght_reads.sh for filtering the raw reads before mapping step
+
+      - cd 01_Scripts
+      - nohup bash /data/projet2/01_Scripts/13_Filtering_lenght_reads.sh > filtering_step.log 2>&1 &
+
+
+## 8 novembre
+- Marieke : 6h
+
+     - I modified the script for the mapping and run it :
+
+      - cd 01_Scripts
+      - nohup bash /data/projet2/01_Scripts/14_Mapping_Reads.sh > mapping.log 2>&1 &
+
+     - I created 15_Mapping_Raw_Reads.sh and i deleted the files corresponding to the script 13_Filtering_lenght_reads.sh because it's probably selected NUMT's due to the filter after reflexion because their drastics and after the mapping with filtered reads we have 395 reads mapped on the genome reference, so i run the mapping on raw reads for comparing the two results of making.
+
+      - cd 01_Scripts
+      - nohup bash /data/projet2/01_Scripts/15_Mapping_Raw_Reads.sh > mapping_raw_reads.log 2>&1 &
+
+     - This script allow us to have 728 read map to the reference genome so i decided to keep this for the rest of the project
+
+     - I created a script for extract read from the bam file and turn them into a fastq file for perform the assembly on it after fiew analyse with nanoplot on the reads.
+
+      - cd 01_Scripts
+      - nohup bash /data/projet2/01_Scripts/16_Reads_for_assembly_and_stats.sh > nano_read_mapped.log 2>&1 &
+
+
+     - I create a new environnment for running FLYE Assembly programme on our mapped reads extract
+
+      - conda create -n env_assemblage_asta
+      - conda activate /data/projet2/conda/envs/env_assemblage_asta
+      - conda install bioconda::flye
+      - conda deactivate
+
+     - flye version 2.9.6
+
+     - I run the script :
+     
+      - cd 01_Scripts
+      - nohup bash /data/projet2/01_Scripts/17_Flye_Assembly.sh > assembly_fly.log 2>&1 &
+
+     - Index the assembly file : samtools faidx /data/projet2/03_Astacidea_Genome/Assembly/fly_result/assembly.fasta
+     - Stats on the file : seqkit stats /data/projet2/03_Astacidea_Genome/Assembly/fly_result/assembly.fasta > /data/projet2/03_Astacidea_Genome/Assembly/fly_result/stats_assemblage.txt
+     
+
+     - For see if their is real variation and maybe some other mitochondrial genome we perform a second mapping of or mitochondrial reads extract against the assembly which is a consensus sequence of these reads
+     - I created the scripts 18_Mapping_against_assembly.sh for doing the second Mapping
+
+      - cd 01_Scripts
+      - nohup bash /data/projet2/01_Scripts/18_Mapping_against_assembly.sh > mapping_2.log 2>&1 &
+
+     - I also created a script for detect variants and run it :
+
+      - cd 01_Script
+      - nohup bash /data/projet2/01_Scripts/19_Variant_calling.sh > variant_call.log 2>&1 &
