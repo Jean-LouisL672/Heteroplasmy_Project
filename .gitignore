@@ -36,6 +36,8 @@ biopython/
 environment_projet/
 nobi_datasets/
 conda_envs_dir_test/
+conda/python4
+
 
 
 # Données de sortie volumineuses
