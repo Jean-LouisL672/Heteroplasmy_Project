@@ -47,10 +47,15 @@ Sorties clés:
 
 
 ## Citations / Outils
-- BLAST+ (NCBI)
-- MAFFT
-- IQ-TREE2
-- minimap2, samtools, bcftools, Flye, NanoPlot, seqkit
+-- BLAST+ (NCBI) : https://ftp.ncbi.nih.gov/blast/executables/blast+/LATEST/
+- MAFFT : https://mafft.cbrc.jp/alignment/software/
+- IQ-TREE2 : https://www.iqtree.org/
+- minimap2 : https://github.com/lh3/minimap2
+- samtools : https://www.htslib.org/
+- bcftools : https://www.htslib.org/
+- Flye : https://github.com/fenderglass/Flye
+- NanoPlot : https://github.com/wdecoster/NanoPlot
+- seqkit : https://bioinf.shenwei.me/seqkit/
 
 ## Auteurs
 Groupe: GORISSEN Marieke, MEGUEBLI Rayan, BADIONE Jean-Louis.
