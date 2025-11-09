@@ -23,7 +23,7 @@ conda activate /data/projet2/conda/envs/env_assemblage_asta
 
 cd $ASSEMBLY_DIR
 
-#Proceed to the assembly
+#Proceed to the assembly with pacbio-raw because we have PacBio RS reads
 flye --pacbio-raw $FASTQ_FILE --out-dir $OUTPUT_FLYE --threads 2
 
 echo "Assembly Done"

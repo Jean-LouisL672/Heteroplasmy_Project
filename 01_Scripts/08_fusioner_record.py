@@ -1,9 +1,6 @@
 #!/usr/bin/env python4
 import os
 from Bio import SeqIO
-from Bio import AlignIO
-from Bio import Align
-import subprocess
 
 GENES_DIR_OUTPUT = "/data/projet2/02_Phylogeny_part/mitochondrion/output_test"
 FICHIER_ALIGNER = "/data/projet2/02_Phylogeny_part/fasta_files/all_sequences_mito.fasta"
@@ -20,7 +17,5 @@ def alignement():
                 for record in SeqIO.parse(fasta_path, "fasta"):
                     SeqIO.write(record, result_file, "fasta")
     result_file.close()
-    subprocess.run(["clustalo","-i", FICHIER_ALIGNER,"-o", OUTPUT_CLUSTAL,"--force"  ])
-    # Aligner les séquences avec Clustal Omega
 if __name__ == "__main__":
     alignement()

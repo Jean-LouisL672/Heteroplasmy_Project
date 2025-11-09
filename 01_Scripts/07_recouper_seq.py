@@ -33,7 +33,7 @@ seq=(
 
 # Enregistre la séquence de référence
 os.makedirs(os.path.dirname(SEQ_FASTA), exist_ok=True)
-seq_record = SeqRecord(Seq(seq), id="ATP6", description="")
+seq_record = SeqRecord(Seq(seq), id="CYTB", description="")
 SeqIO.write(seq_record, SEQ_FASTA, "fasta")
 
 

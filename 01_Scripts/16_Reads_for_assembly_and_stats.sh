@@ -27,7 +27,7 @@ if [ ! -f "$FASTQ/mito_reads.fastq" ] ; then
     exit 1
 fi
 
-#Creation of report of our mapped reads
+#Creation of report of our mapped reads with on the plot the N50 value and standardiza length
 NanoPlot --fastq $FASTQ/mito_reads.fastq -o $REPORTS/Nanoplot --N50 --loglength
 
 echo "Nanoplot report done"

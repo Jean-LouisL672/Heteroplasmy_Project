@@ -1,11 +1,11 @@
-import iqtree
+import subprocess
 
 # arbre Maximum de Vraisemblance , on a pu montrer que ML, associé à une bonne recherche heuristique, est la méthode 
 #qui a le plus de chances de retrouver la vraie phylogénie. C’est son avantage majeur au vu de notre jeux de donner avec
 # un nombre limité de séquences.
 
 #Directories 
-WORKDIR="data/projet2/02_Phylogeny_part/fasta_files/all_sequences_mito_aligned.fasta"
+WORKDIR="data/projet2/02_Phylogeny_part/fasta_files/all_sequences_mito.fasta"
 OUTPUT_DIR="results/projet2/02_Phylogeny_part/arbre_phylo"
 
 
